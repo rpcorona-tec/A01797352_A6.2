@@ -1,0 +1,16 @@
+(.venv) (base) corona@RxMacBook A01797352_A6.2 % flake8
+./src/archivos.py:26:44: W292 no newline at end of file
+./src/customer.py:81:17: W292 no newline at end of file
+./src/hotel.py:97:1: E302 expected 2 blank lines, found 1
+./src/hotel.py:109:48: W292 no newline at end of file
+./src/reservation.py:4:80: E501 line too long (81 > 79 characters)
+./src/reservation.py:104:80: E501 line too long (89 > 79 characters)
+./src/reservation.py:110:16: W292 no newline at end of file
+./tests/test_archivos.py:1:1: F401 'os' imported but unused
+./tests/test_archivos.py:26:20: W292 no newline at end of file
+./tests/test_customer.py:1:1: F401 'os' imported but unused
+./tests/test_customer.py:57:20: W292 no newline at end of file
+./tests/test_hotel.py:1:1: F401 'os' imported but unused
+./tests/test_hotel.py:62:20: W292 no newline at end of file
+./tests/test_reservation.py:1:1: F401 'os' imported but unused
+./tests/test_reservation.py:89:20: W292 no newline at end of file

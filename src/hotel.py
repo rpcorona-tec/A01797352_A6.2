@@ -94,6 +94,7 @@ def actualizar_hotel(hotel):
 
     return False
 
+
 def reservar_cuarto(hotel_id, cliente_id, reservacion_id, cuartos):
     """Crea una reservación (atajo desde hotel)."""
     from src.reservation import Reservacion, crear_reservacion

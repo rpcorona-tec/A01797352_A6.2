@@ -1,4 +1,3 @@
-import os
 import unittest
 
 from src.archivos import cargar_lista, guardar_lista

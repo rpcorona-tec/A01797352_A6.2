@@ -1,7 +1,8 @@
 """
 Módulo Reservación.
 x
-Contiene la clase Reservacion y operaciones básicas persistentes en archivo JSON.
+Contiene la clase Reservacion y operaciones básicas persistentes
+en archivo JSON.
 """
 
 from src.archivos import cargar_lista, guardar_lista
@@ -101,7 +102,8 @@ def cancelar_reservacion(reservacion_id):
     Regresa True si eliminó, False si no existe.
     """
     reservaciones = cargar_lista(RUTA_RESERVACIONES)
-    nuevas = [r for r in reservaciones if r.get("reservacion_id") != str(reservacion_id)]
+    nuevas = [r for r in reservaciones
+              if r.get("reservacion_id") != str(reservacion_id)]
 
     if len(nuevas) == len(reservaciones):
         return False

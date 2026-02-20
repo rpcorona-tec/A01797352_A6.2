@@ -37,6 +37,7 @@ class Cliente:
 
 
 def crear_cliente(cliente):
+    """Crea un cliente y lo guarda."""
     clientes = cargar_lista(RUTA_CLIENTES)
 
     for c in clientes:
@@ -49,6 +50,7 @@ def crear_cliente(cliente):
 
 
 def borrar_cliente(cliente_id):
+    """Elimina un cliente."""
     clientes = cargar_lista(RUTA_CLIENTES)
     nuevos = [c for c in clientes if c.get("cliente_id") != str(cliente_id)]
 
@@ -60,6 +62,7 @@ def borrar_cliente(cliente_id):
 
 
 def obtener_cliente(cliente_id):
+    """Obtiene un cliente."""
     clientes = cargar_lista(RUTA_CLIENTES)
 
     for c in clientes:
@@ -70,6 +73,7 @@ def obtener_cliente(cliente_id):
 
 
 def actualizar_cliente(cliente):
+    """Actualiza un cliente y lo guarda."""
     clientes = cargar_lista(RUTA_CLIENTES)
 
     for i, c in enumerate(clientes):

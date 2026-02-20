@@ -1,3 +1,6 @@
+"""Pruebas unitarias."""
+# pylint: disable=missing-function-docstring
+
 import unittest
 
 from src.archivos import guardar_lista

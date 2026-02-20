@@ -1,0 +1,21 @@
+(.venv) (base) corona@RxMacBook A01797352_A6.2 % python -m coverage run -m unittest discover -s tests
+python -m coverage report -m
+Error al cargar archivo: data/no_existe.json
+.....................
+----------------------------------------------------------------------
+Ran 21 tests in 0.009s
+
+OK
+Name                        Stmts   Miss  Cover   Missing
+---------------------------------------------------------
+src/__init__.py                 0      0   100%
+src/archivos.py                11      0   100%
+src/customer.py                41      2    95%   58, 85
+src/hotel.py                   42      1    98%   95
+src/reservation.py             50      2    96%   37, 64
+tests/test_archivos.py         15      1    93%   28
+tests/test_customer.py         33      1    97%   59
+tests/test_hotel.py            37      1    97%   64
+tests/test_reservation.py      56      1    98%   91
+---------------------------------------------------------
+TOTAL                         285      9    97%

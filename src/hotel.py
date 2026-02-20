@@ -1,8 +1,13 @@
 """
 Módulo Hotel.
 
-Contiene la clase Hotel y funciones simples para convertir a/desde diccionarios.
+Contiene la clase Hotel y operaciones básicas persistentes en archivo JSON.
 """
+
+from src.archivos import cargar_lista, guardar_lista
+
+
+RUTA_HOTELES = "data/hotels.json"
 
 
 class Hotel:
@@ -32,3 +37,59 @@ class Hotel:
             data.get("ciudad"),
             data.get("cuartos_totales"),
         )
+
+
+def crear_hotel(hotel):
+    """
+    Guarda un hotel nuevo.
+    Regresa True si se guardó, False si ya existía.
+    """
+    hoteles = cargar_lista(RUTA_HOTELES)
+
+    for h in hoteles:
+        if h.get("hotel_id") == hotel.hotel_id:
+            return False
+
+    hoteles.append(hotel.a_diccionario())
+    guardar_lista(RUTA_HOTELES, hoteles)
+    return True
+
+
+def borrar_hotel(hotel_id):
+    """
+    Borra un hotel por id.
+    Regresa True si borró, False si no existía.
+    """
+    hoteles = cargar_lista(RUTA_HOTELES)
+    hoteles_nuevos = [h for h in hoteles if h.get("hotel_id") != str(hotel_id)]
+
+    if len(hoteles_nuevos) == len(hoteles):
+        return False
+
+    guardar_lista(RUTA_HOTELES, hoteles_nuevos)
+    return True
+
+
+def obtener_hotel(hotel_id):
+    """Regresa un Hotel si existe, si no, None."""
+    hoteles = cargar_lista(RUTA_HOTELES)
+    for h in hoteles:
+        if h.get("hotel_id") == str(hotel_id):
+            return Hotel.desde_diccionario(h)
+    return None
+
+
+def actualizar_hotel(hotel):
+    """
+    Actualiza un hotel existente por id.
+    Regresa True si actualizó, False si no existía.
+    """
+    hoteles = cargar_lista(RUTA_HOTELES)
+
+    for i, h in enumerate(hoteles):
+        if h.get("hotel_id") == hotel.hotel_id:
+            hoteles[i] = hotel.a_diccionario()
+            guardar_lista(RUTA_HOTELES, hoteles)
+            return True
+
+    return False

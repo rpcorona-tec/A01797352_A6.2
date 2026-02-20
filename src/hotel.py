@@ -94,15 +94,16 @@ def actualizar_hotel(hotel):
 
     return False
 
-from src.reservation import cancelar_reservacion, crear_reservacion, Reservacion
-
-
 def reservar_cuarto(hotel_id, cliente_id, reservacion_id, cuartos):
     """Crea una reservación (atajo desde hotel)."""
+    from src.reservation import Reservacion, crear_reservacion
+
     reservacion = Reservacion(reservacion_id, hotel_id, cliente_id, cuartos)
     return crear_reservacion(reservacion)
 
 
 def cancelar_reserva(reservacion_id):
     """Cancela una reservación (atajo desde hotel)."""
+    from src.reservation import cancelar_reservacion
+
     return cancelar_reservacion(reservacion_id)

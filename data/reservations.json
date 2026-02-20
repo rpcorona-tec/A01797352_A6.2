@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "reservacion_id": "R1",
+        "hotel_id": "H1",
+        "cliente_id": "C1",
+        "cuartos": 1
+    }
+]

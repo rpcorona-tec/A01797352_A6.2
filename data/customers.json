@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "cliente_id": "C1",
+        "nombre": "Ricardo",
+        "correo": "correo@test.com"
+    },
+    {
+        "cliente_id": "C2",
+        "nombre": "Paulina",
+        "correo": "paulina@test.com"
+    }
+]

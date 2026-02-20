@@ -10,10 +10,6 @@ class TestArchivos(unittest.TestCase):
     def setUp(self):
         self.ruta_prueba = "data/prueba.json"
 
-    def tearDown(self):
-        if os.path.exists(self.ruta_prueba):
-            os.remove(self.ruta_prueba)
-
     def test_guardar_y_cargar_lista(self):
         datos = [{"id": 1, "nombre": "test"}]
         guardar_lista(self.ruta_prueba, datos)

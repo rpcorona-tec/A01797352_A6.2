@@ -18,10 +18,6 @@ class TestHotel(unittest.TestCase):
     def setUp(self):
         guardar_lista(RUTA_HOTELES, [])
 
-    def tearDown(self):
-        if os.path.exists(RUTA_HOTELES):
-            os.remove(RUTA_HOTELES)
-
     def test_crear_hotel(self):
         hotel = Hotel("H1", "Hotel Centro", "Veracruz", 10)
         resultado = crear_hotel(hotel)

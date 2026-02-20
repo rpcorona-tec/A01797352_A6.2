@@ -21,11 +21,6 @@ class TestReservacion(unittest.TestCase):
         guardar_lista(RUTA_CLIENTES, [])
         guardar_lista(RUTA_RESERVACIONES, [])
 
-    def tearDown(self):
-        for ruta in [RUTA_HOTELES, RUTA_CLIENTES, RUTA_RESERVACIONES]:
-            if os.path.exists(ruta):
-                os.remove(ruta)
-
     def test_crear_reservacion_ok(self):
         crear_hotel(Hotel("H1", "Hotel Centro", "Veracruz", 2))
         crear_cliente(Cliente("C1", "Ricardo", "correo@test.com"))

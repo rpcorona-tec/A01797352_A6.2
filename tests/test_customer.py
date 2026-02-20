@@ -18,10 +18,6 @@ class TestCliente(unittest.TestCase):
     def setUp(self):
         guardar_lista(RUTA_CLIENTES, [])
 
-    def tearDown(self):
-        if os.path.exists(RUTA_CLIENTES):
-            os.remove(RUTA_CLIENTES)
-
     def test_crear_cliente(self):
         cliente = Cliente("C1", "Ricardo", "correo@test.com")
         self.assertTrue(crear_cliente(cliente))
